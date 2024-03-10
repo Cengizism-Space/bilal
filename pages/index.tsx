@@ -28,7 +28,9 @@ const Home: NextPage = ({ images }: { images: ImageProps[] }) => {
   return (
     <>
       <Head>
-        <title>Hellevoetsluis HDV Eyüp Sultan Camii</title>
+        <title>
+          Hellevoetsluis HDV Eyüp Sultan Camii TV mededelingen en activiteiten
+        </title>
         <meta
           property="og:image"
           content="/public/hdv-hellenvoetsluis-og-image.jpeg"
@@ -76,7 +78,7 @@ const Home: NextPage = ({ images }: { images: ImageProps[] }) => {
         </div>
       </main>
       <footer className="p-6 text-center text-white/80 sm:p-12">
-        Hellevoetsluis HDV Eyüp Sultan Camii
+        Hellevoetsluis HDV Eyüp Sultan Camii TV mededelingen en activiteiten
       </footer>
     </>
   );

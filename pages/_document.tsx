@@ -10,14 +10,23 @@ class MyDocument extends Document {
             name="description"
             content="Hellevoetsluis HDV Eyüp Sultan Camii TV mededelingen en activiteiten"
           />
-          <meta property="og:site_name" content="nextjsconf-pics.vercel.app" />
+          <meta
+            property="og:site_name"
+            content="Hellevoetsluis HDV Eyüp Sultan Camii TV mededelingen en activiteiten"
+          />
           <meta
             property="og:description"
             content="Hellevoetsluis HDV Eyüp Sultan Camii TV mededelingen en activiteiten"
           />
-          <meta property="og:title" content="Next.js Conf 2022 Pictures" />
+          <meta
+            property="og:title"
+            content="Hellevoetsluis HDV Eyüp Sultan Camii TV mededelingen en activiteiten"
+          />
           <meta name="twitter:card" content="summary_large_image" />
-          <meta name="twitter:title" content="Next.js Conf 2022 Pictures" />
+          <meta
+            name="twitter:title"
+            content="Hellevoetsluis HDV Eyüp Sultan Camii TV mededelingen en activiteiten"
+          />
           <meta
             name="twitter:description"
             content="Hellevoetsluis HDV Eyüp Sultan Camii TV mededelingen en activiteiten"
