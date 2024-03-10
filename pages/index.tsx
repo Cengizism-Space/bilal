@@ -17,6 +17,8 @@ const Home: NextPage = ({ images }: { images: ImageProps[] }) => {
 
   const lastViewedPhotoRef = useRef<HTMLAnchorElement>(null);
 
+  console.log("images", images);
+
   useEffect(() => {
     // This effect keeps track of the last viewed photo in the modal to keep the index page in sync when the user navigates back
     if (lastViewedPhoto && !photoId) {
