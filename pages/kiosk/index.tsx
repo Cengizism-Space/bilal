@@ -42,7 +42,7 @@ const Home: NextPage = ({ images }: { images: ImageProps[] }) => {
       </Head>
       <main className="h-full w-full">
         <CarouselProvider
-          interval={10000}
+          interval={30000}
           isPlaying={true}
           infinite={true}
           naturalSlideWidth={100}
