@@ -1,23 +1,15 @@
 import type { NextPage } from "next";
 import Head from "next/head";
 import Image from "next/image";
-import Link from "next/link";
 import { useRouter } from "next/router";
 import { useEffect, useRef } from "react";
-import Modal from "../../components/Modal";
 import cloudinary from "../../utils/cloudinary";
 import getBase64ImageUrl from "../../utils/generateBlurPlaceholder";
 import type { ImageProps } from "../../utils/types";
 import { useLastViewedPhoto } from "../../utils/useLastViewedPhoto";
 
 import React from "react";
-import {
-  CarouselProvider,
-  Slider,
-  Slide,
-  ButtonBack,
-  ButtonNext,
-} from "pure-react-carousel";
+import { CarouselProvider, Slider, Slide } from "pure-react-carousel";
 import "pure-react-carousel/dist/react-carousel.es.css";
 
 const Home: NextPage = ({ images }: { images: ImageProps[] }) => {
@@ -26,8 +18,6 @@ const Home: NextPage = ({ images }: { images: ImageProps[] }) => {
   const [lastViewedPhoto, setLastViewedPhoto] = useLastViewedPhoto();
 
   const lastViewedPhotoRef = useRef<HTMLAnchorElement>(null);
-
-  // console.log("images", images);
 
   useEffect(() => {
     // This effect keeps track of the last viewed photo in the modal to keep the index page in sync when the user navigates back
@@ -40,7 +30,7 @@ const Home: NextPage = ({ images }: { images: ImageProps[] }) => {
   return (
     <>
       <Head>
-        <title>KIOSK</title>
+        <title>Eyup Sultan Moskee mededelingen</title>
         <meta
           property="og:image"
           content="/public/hdv-hellenvoetsluis-og-image.jpeg"
@@ -52,7 +42,6 @@ const Home: NextPage = ({ images }: { images: ImageProps[] }) => {
       </Head>
       <main className="h-full w-full">
         <CarouselProvider
-          className="h-full w-full"
           interval={10000}
           isPlaying={true}
           infinite={true}
@@ -62,21 +51,25 @@ const Home: NextPage = ({ images }: { images: ImageProps[] }) => {
         >
           <Slider>
             {images.map(({ id, public_id, format, blurDataUrl }, index) => (
-              <Slide index={index}>
+              <Slide key={`slide-${index}`} index={index}>
+                <Image
+                  src={blurDataUrl}
+                  className="pointer-events-none h-full w-full"
+                  alt="blurred background"
+                  fill
+                  priority={true}
+                />
                 <Image
                   alt="Slide image"
-                  className="transform rounded-lg brightness-90 transition will-change-auto group-hover:brightness-110"
+                  className="mx-auto transform rounded-lg brightness-90 transition will-change-auto group-hover:brightness-110"
                   style={{
-                    transform: "translate3d(0, 0, 0)",
+                    transform: "translate3d(0, 0, 0)"
                   }}
                   placeholder="blur"
                   blurDataURL={blurDataUrl}
-                  src={`https://res.cloudinary.com/${process.env.NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME}/image/upload/c_scale,w_720/${public_id}.${format}`}
-                  width={720}
-                  height={480}
-                  sizes="100vw 100vh"
-                  layout="responsive"
-                  quality={100}
+                  src={`https://res.cloudinary.com/${process.env.NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME}/image/upload/c_scale,w_1920/${public_id}.${format}`}
+                  width={1920}
+                  height={1440}
                 />
               </Slide>
             ))}
